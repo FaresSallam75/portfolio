@@ -3,28 +3,28 @@ name: Build and Deploy Flutter Web
 on:
   push:
     branches:
-      - master  # Changed from main to master
+      - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 📥 Checkout source code
         uses: actions/checkout@v3
 
-      - name: Set up Flutter
+      - name: 🛠️ Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'  # or your Flutter version
+          flutter-version: '3.22.1'
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: flutter pub get
 
-      - name: Build web
-        run: flutter build web --release --base-href "/responsiveportfolio_web/"
+      - name: 🛠️ Build Flutter web
+        run: flutter build web --release --base-href "/portfolio/"
 
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

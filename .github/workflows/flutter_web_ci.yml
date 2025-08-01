@@ -2,39 +2,30 @@ name: Flutter Web CI
 
 on:
   push:
-    branches: [ master ] # or your deployment branch
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  build:
-    name: Build Flutter Web
+  flutter-web-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout source code
         uses: actions/checkout@v3
 
-      - name: Set up Flutter
+      - name: 🛠️ Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1' # change to your flutter version
+          flutter-version: '3.22.1'
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: flutter pub get
 
-      - name: Analyze code
+      - name: 🧪 Analyze
         run: flutter analyze
 
-      - name: Run tests (if you have any)
-        run: flutter test || true
-
-      - name: Build Web
-        run: flutter build web --release --base-href "/responsiveportfolio_web/"
-
-      # Optional: upload build artifacts
-      - name: Upload build output
-        uses: actions/upload-artifact@v3
-        with:
-          name: web-build
-          path: build/web
+      - name: 🧱 Build Flutter Web
+        run: flutter build web --release

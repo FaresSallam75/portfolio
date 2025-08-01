@@ -2,9 +2,9 @@ name: Flutter Web CI
 
 on:
   push:
-    branches: [ main ] # or your deployment branch
+    branches: [ master ] # or your deployment branch
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:

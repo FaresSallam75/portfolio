@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfoli/constants.dart';
-import 'package:portfoli/responsive.dart';
+import 'package:portfolio/constants.dart';
+import 'package:portfolio/responsive.dart';
 
 import 'myinfo/side_menu.dart';
 

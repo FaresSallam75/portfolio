@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfoli/components/animated_counter.dart';
-import 'package:portfoli/responsive.dart';
+import 'package:portfolio/components/animated_counter.dart';
+import 'package:portfolio/responsive.dart';
 
 import '../../../constants.dart';
 import 'heigh_light.dart';

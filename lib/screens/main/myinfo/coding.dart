@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfoli/components/animated_progress_indicator.dart';
+import 'package:portfolio/components/animated_progress_indicator.dart';
 
 import '../../../constants.dart';
 

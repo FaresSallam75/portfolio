@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfoli/models/Recommendation.dart';
+import 'package:portfolio/models/Recommendation.dart';
 
 import '../../../constants.dart';
 

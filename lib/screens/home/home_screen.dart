@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfoli/screens/main/main_screen.dart';
+import 'package:portfolio/screens/main/main_screen.dart';
 
 import 'components/heighlights.dart';
 import 'components/home_banner.dart';

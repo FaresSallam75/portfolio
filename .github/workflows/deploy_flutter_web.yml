@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release --base-href "/responsiveportfoli_web/"
+        run: flutter build web --release --base-href "/responsiveportfolio_web/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

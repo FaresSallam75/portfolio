@@ -30,7 +30,7 @@ jobs:
         run: flutter test || true
 
       - name: Build Web
-        run: flutter build web --release
+        run: flutter build web --release --base-href "/responsiveportfoli_web/"
 
       # Optional: upload build artifacts
       - name: Upload build output

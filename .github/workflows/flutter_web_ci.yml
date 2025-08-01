@@ -1,0 +1,40 @@
+name: Flutter Web CI
+
+on:
+  push:
+    branches: [ main ] # or your deployment branch
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build Flutter Web
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.1' # change to your flutter version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze code
+        run: flutter analyze
+
+      - name: Run tests (if you have any)
+        run: flutter test || true
+
+      - name: Build Web
+        run: flutter build web --release
+
+      # Optional: upload build artifacts
+      - name: Upload build output
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-build
+          path: build/web
